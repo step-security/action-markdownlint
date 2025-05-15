@@ -1,18 +1,6 @@
-# GitHub Action: Run markdownlint with reviewdog
-
-Based on [reviewdog/action-shellcheck](https://github.com/reviewdog/action-shellcheck)
-
-[![Docker Image CI](https://github.com/prologic/action-markdownlint/workflows/Docker%20Image%20CI/badge.svg)](https://github.com/prologic/action-markdownlint/actions)
-[![Release](https://img.shields.io/github/release/prologic/action-markdownlint.svg?maxAge=43200)](https://github.com/prologic/action-markdownlint/releases)
-
-This action runs [markdownlint](https://github.com/DavidAnson/markdownlint) with
-[reviewdog](https://github.com/reviewdog/reviewdog) on pull requests to improve
-code review experience.
-
-## Inputs
-
-<!-- markdownlint-disable MD013 -->
-```yml
+name: 'Run markdownlint with reviewdog'
+description: '🐶 Run markdownlint with reviewdog on pull requests to improve code review experience.'
+author: 'step-security'
 inputs:
   github_token:
     description: 'GITHUB_TOKEN.'
@@ -50,25 +38,9 @@ inputs:
   markdownlint_flags:
     description: "Options of markdownlint-cli command. Default: '.'"
     default: '.'
-```
-<!-- markdownlint-enable MD013 -->
-
-## Example usage
-
-### [.github/workflows/reviewdog.yml](.github/workflows/reviewdog.yml)
-
-```yml
-name: reviewdog
-on: [pull_request]
-jobs:
-  markdownlint:
-    name: runner / markdownlint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - name: markdownlint
-        uses: step-security/action-markdownlint@3667398db9118d7e78f7a63d10e26ce454ba5f58 # v0.26.2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review
-```
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'zoom-in'
+  color: 'purple'
