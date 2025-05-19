@@ -2,8 +2,13 @@
 
 # install curl
 
-apt-get update
-apt-get install -y curl
+if ! command -v curl &> /dev/null; then
+  echo "curl not found. Installing..."
+  apt-get update
+  apt-get install -y curl
+else
+  echo "curl is already installed."
+fi
 
 # validate subscription status
 API_URL="https://agent.api.stepsecurity.io/v1/github/$GITHUB_REPOSITORY/actions/subscription"
