@@ -1,4 +1,4 @@
-FROM node:20-bullseye-slim
+FROM node:20-bullseye-slim@sha256:95894148634cb45fb88f97492af773c8800ea09a02080fe1ef4097a4f8294d1f
 
 ENV MARKDOWNLINT_CLI_VERSION=v0.41.0
 
