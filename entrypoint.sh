@@ -1,7 +1,9 @@
 #!/bin/sh
 
 # install curl
-sudo apt install curl
+
+apt-get update
+apt-get install -y curl
 
 # validate subscription status
 API_URL="https://agent.api.stepsecurity.io/v1/github/$GITHUB_REPOSITORY/actions/subscription"
