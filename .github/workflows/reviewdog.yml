@@ -18,9 +18,11 @@ jobs:
           reporter: github-check
           level: warning
           filter_mode: nofilter
+          markdownlint_flags: . -i README.md SECURITY.md
 
       - name: markdownlint-github-pr-review
         uses: ./
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
+          markdownlint_flags: . -i README.md SECURITY.md
