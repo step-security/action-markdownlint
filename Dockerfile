@@ -1,4 +1,4 @@
-FROM golang:1.23-alpine@sha256:9b07790bb99f0cba351ed7199a421b6281b0d84325647c83d009f6540f6ceb90 AS go-builder
+FROM golang:1.25-alpine@sha256:77dd832edf2752dafd030693bef196abb24dcba3a2bc3d7a6227a7a1dae73169 AS go-builder
 
 ENV REVIEWDOG_VERSION=v0.20.3
 
