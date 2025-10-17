@@ -9,7 +9,7 @@ RUN apk add --no-cache git \
     && go mod tidy \
     && CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o reviewdog ./cmd/reviewdog
 
-FROM node:24.10-alpine3.22@sha256:6ff78d6d45f2614fe0da54756b44a7c529a15ebcaf9832fab8df036b1d466e73
+FROM node:25.0-alpine3.22@sha256:809972647175c30a4c7763d3e6cc064dec588972af57e540e5a6f27442bb0845
 
 ENV MARKDOWNLINT_CLI_VERSION=v0.42.0
 RUN npm install -g "markdownlint-cli@$MARKDOWNLINT_CLI_VERSION"
