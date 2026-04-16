@@ -16,6 +16,7 @@ RUN npm install -g "markdownlint-cli@$MARKDOWNLINT_CLI_VERSION"
 RUN apk add --no-cache \
         ca-certificates \
         git \
+        jq \
         wget \
         curl
 
