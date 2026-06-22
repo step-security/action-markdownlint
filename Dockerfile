@@ -1,4 +1,4 @@
-FROM golang:1.26.3-alpine3.23@sha256:91eda9776261207ea25fd06b5b7fed8d397dd2c0a283e77f2ab6e91bfa71079d AS go-builder
+FROM golang:1.26-alpine3.24@sha256:3ad57304ad93bbec8548a0437ad9e06a455660655d9af011d58b993f6f615648 AS go-builder
 
 ENV REVIEWDOG_VERSION=v0.21.0
 
@@ -9,8 +9,8 @@ RUN apk add --no-cache git \
     && go mod tidy \
     && CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o reviewdog ./cmd/reviewdog
 
-FROM node:25.9.0-alpine3.23@sha256:bdf2cca6fe3dabd014ea60163eca3f0f7015fbd5c7ee1b0e9ccb4ced6eb02ef4
-ENV MARKDOWNLINT_CLI_VERSION=v0.48.0
+FROM node:26-alpine3.24@sha256:a2dc166a387cc6ca1e62d0c8e265e49ca985d6e60abc9fe6e6c3d6ce8e63f606
+ENV MARKDOWNLINT_CLI_VERSION=v0.49.0
 RUN npm install -g "markdownlint-cli@$MARKDOWNLINT_CLI_VERSION"
 
 RUN apk upgrade --no-cache \
