@@ -40,7 +40,7 @@ inputs:
     default: '.'
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/step-security/action-markdownlint:v0.28.0@sha256:fe52033bc1076230c937c8289f39dc9b876363a1886704b23109ed064b1f847e' #v0.28.0
+  image: 'docker://ghcr.io/step-security/action-markdownlint:v0.31.2@sha256:ec2fed89f898cbc1b03a006714009ae045d8a991132131b86fc544b1751d668f' #v0.31.2
 branding:
   icon: 'zoom-in'
   color: 'purple'
