@@ -1,0 +1,12 @@
+{
+  "$comment": "Managed automatically when syncing with upstream. Do not edit by hand.",
+  "schema_version": 1,
+  "onboarding_type": "copied",
+  "action_type": "docker",
+  "upstream": {
+    "repository": "reviewdog/action-markdownlint",
+    "synced_tag": "v0.33.0",
+    "synced_commit": "55f2ecf4c813c1cfac36953c1c40a46ec5c28f70",
+    "archived": false
+  }
+}
